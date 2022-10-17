@@ -71,4 +71,4 @@ doc = service.documents().get(documentId=DOCUMENT_ID).execute()
 doc_content = doc.get('body').get('content')
 res = make_dict(doc_content)
 with open('output.json', 'w') as file:
-    json.dump(res, file, indent=4, sort_keys=True)
+    json.dump(res, file, indent=4)
