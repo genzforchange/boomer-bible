@@ -62,10 +62,11 @@ def make_dict(elements):
         
     return d
 
-
-# Retrieve the documents contents from the Docs service.
-doc = service.documents().get(documentId=DOCUMENT_ID).execute()
-doc_content = doc.get('body').get('content')
-res = make_dict(doc_content)
-with open('data.json', 'w') as file:
-    json.dump(res, file, indent=4)
+def execute():
+    print('Hello, World!')
+    # Retrieve the documents contents from the Docs service.
+    doc = service.documents().get(documentId=DOCUMENT_ID).execute()
+    doc_content = doc.get('body').get('content')
+    res = make_dict(doc_content)
+    with open('data.json', 'w') as file:
+        json.dump(res, file, indent=4)

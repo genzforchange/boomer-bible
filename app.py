@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import json
 import re
+import generate_data
 
 app = Flask(__name__)
 
@@ -15,6 +16,8 @@ def replace_url_to_link(value):
     urls = re.compile(r"([\w\-\.]+@(\w[\w\-]+\.)+[\w\-]+)", re.MULTILINE|re.UNICODE)
     value = urls.sub(r'<a href="mailto:\1">\1</a>', value)
     return value
+
+generate_data.execute()
 
 with open(JSON_FILE) as json_file:
     data = json.load(json_file)
