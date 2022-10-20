@@ -1,0 +1,20 @@
+{% for obj in data %}
+<div class="person">
+    <h1>{{ obj.name }}</h1>
+    {% for topic in obj.topics %}
+    <div class="topic">
+        <h2>{{ topic.name }}</h2>
+        {% for event in topic.events %}
+        <div class="event">
+            <h3>{{ event.date }}</h4>
+            <div class="bullets">
+            {% for bullet in event.description %}
+                <ul> {{ bullet }} </ul>
+            {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
