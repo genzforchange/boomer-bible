@@ -7,15 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 
+<h1>Boomer Bible <span>by Gen-Z for Change</span></h1>
+
 {% for obj in data %}
-<div class="person">
-    <h1>{{ obj.name }}</h1>
+<div class="person" id={{ obj.name.replace(" ", "-") .lower()}}>
+    <h2>{{ obj.name }}</h2>
     {% for topic in obj.topics %}
-    <div class="topic">
-        <h2>{{ topic.name }}</h2>
+    <div class="topic" id="{{ topic.name.replace(" ", "-") .lower()}}">
+        <h3>{{ topic.name }}</h3>
         {% for event in topic.events %}
-        <div class="event">
-            <h3>{{ event.date }}</h4>
+        <div class="event" id={{ "event" + loop.index|string }}>
+            <span>{{ loop.index }}</span>
+            <h4>{{ event.date }}</h4>
             <div class="bullets">
             {% for bullet in event.description %}
                 <ul> {{ bullet }} </ul>
