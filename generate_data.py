@@ -63,7 +63,6 @@ def make_dict(elements):
     return d
 
 def execute():
-    print('Hello, World!')
     # Retrieve the documents contents from the Docs service.
     doc = service.documents().get(documentId=DOCUMENT_ID).execute()
     doc_content = doc.get('body').get('content')
