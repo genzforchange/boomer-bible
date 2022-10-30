@@ -10,13 +10,16 @@
 <h1>Boomer Bible <span>by Gen-Z for Change</span></h1>
 
 {% for obj in data %}
-<div class="person" id={{ obj.name.replace(" ", "-") .lower()}}>
+{% set curr_person = obj.name.replace(" ", "-") .lower() %}
+<div class="person" id={{ curr_person }}>
     <h2>{{ obj.name }}</h2>
     {% for topic in obj.topics %}
-    <div class="topic" id="{{ topic.name.replace(" ", "-") .lower()}}">
+    {% set curr_topic = topic.name.replace(" ", "-") .lower() %}
+    <div class="topic" id="{{ curr_person + '_' + curr_topic }}">
         <h3>{{ topic.name }}</h3>
         {% for event in topic.events %}
-        <div class="event" id={{ "event" + loop.index|string }}>
+        {% set curr_event = "event" + loop.index|string %}
+        <div class="event" id={{ curr_person + '_' + curr_topic + '_' + curr_event }}>
             <span>{{ loop.index }}</span>
             <h4>{{ event.date }}</h4>
             <div class="bullets">
