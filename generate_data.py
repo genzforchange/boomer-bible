@@ -7,8 +7,12 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
 SCOPES = ['https://www.googleapis.com/auth/documents.readonly']
+
 SERVICE_ACCOUNT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
  'credentials.json')
+OUTPUT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+ 'data.json')
+
 # Set doc ID, as found at `https://docs.google.com/document/d/YOUR_DOC_ID/edit`
 DOCUMENT_ID = '1jVpcE2baS8s5liSWR6cFQMzhXDu4e-zzPUu_nbueMPk'
 
@@ -68,7 +72,7 @@ def execute():
     doc = service.documents().get(documentId=DOCUMENT_ID).execute()
     doc_content = doc.get('body').get('content')
     res = make_dict(doc_content)
-    with open('data.json', 'w') as file:
+    with open(OUTPUT_FILE, 'w') as file:
         json.dump(res, file, indent=4)
 
 if __name__ == "__main__":
