@@ -19,9 +19,10 @@ def replace_url_to_link(value):
 
 generate_data.execute()
 
-with open(JSON_FILE) as json_file:
-    data = json.load(json_file)
-
 @app.route("/")
 def main():
+    
+    with open(JSON_FILE) as json_file:
+        data = json.load(json_file)
+
     return replace_url_to_link(render_template('index.html', data = data))
