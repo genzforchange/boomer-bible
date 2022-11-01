@@ -2,10 +2,12 @@ from flask import Flask, render_template
 import json
 import re
 import generate_data
+import os
 
 app = Flask(__name__)
 
-JSON_FILE = 'data.json'
+cwd = os.getcwd()
+JSON_FILE = cwd + '/data.json'
 
 # from https://gist.github.com/guillaumepiot/4539986
 def replace_url_to_link(value):
@@ -21,7 +23,7 @@ generate_data.execute()
 
 @app.route("/")
 def main():
-    
+
     with open(JSON_FILE) as json_file:
         data = json.load(json_file)
 

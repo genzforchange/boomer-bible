@@ -1,12 +1,15 @@
 from __future__ import print_function
 
 import json
+import os
 
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
+cwd = os.getcwd()
+
 SCOPES = ['https://www.googleapis.com/auth/documents.readonly']
-SERVICE_ACCOUNT_FILE = 'credentials.json'
+SERVICE_ACCOUNT_FILE = cwd + '/credentials.json'
 # Set doc ID, as found at `https://docs.google.com/document/d/YOUR_DOC_ID/edit`
 DOCUMENT_ID = '1jVpcE2baS8s5liSWR6cFQMzhXDu4e-zzPUu_nbueMPk'
 
