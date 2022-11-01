@@ -6,8 +6,8 @@ import os
 
 app = Flask(__name__)
 
-cwd = os.getcwd()
-JSON_FILE = cwd + '/data.json'
+DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+ 'data.json')
 
 # from https://gist.github.com/guillaumepiot/4539986
 def replace_url_to_link(value):
@@ -24,7 +24,7 @@ generate_data.execute()
 @app.route("/")
 def main():
 
-    with open(JSON_FILE) as json_file:
+    with open(DATA_FILE) as json_file:
         data = json.load(json_file)
 
     return replace_url_to_link(render_template('index.html', data = data))
