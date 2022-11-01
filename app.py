@@ -19,8 +19,6 @@ def replace_url_to_link(value):
     value = urls.sub(r'<a href="mailto:\1">\1</a>', value)
     return value
 
-generate_data.execute()
-
 @app.route("/")
 def main():
 

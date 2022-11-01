@@ -70,3 +70,6 @@ def execute():
     res = make_dict(doc_content)
     with open('data.json', 'w') as file:
         json.dump(res, file, indent=4)
+
+if __name__ == "__main__":
+    execute()
