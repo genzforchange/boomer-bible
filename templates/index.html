@@ -21,7 +21,7 @@
         <h3>{{ topic.name }}</h3>
         {% for event in topic.events %}
         {% set curr_event = "event" + loop.index|string %}
-        <div class="event" id={{ curr_person + '_' + curr_topic + '_' + curr_event }}>
+        <div class="event" id="{{ curr_person + '_' + curr_topic + '_' + curr_event }}">
             <span>{{ loop.index }}</span>
             <h4>{{ event.date }}</h4>
             <div class="bullets">
