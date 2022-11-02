@@ -21,6 +21,11 @@
 
         gtag('config', 'G-R1HQ82R1G4');
       </script>
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="boomerbible.org" />
+      <meta name="twitter:title" content="The Boomer Bible" />
+      <meta name="twitter:description" content="Educate your community about what conservative politicians have done."/>
+      <meta name="twitter:image" content="{{ url_for('static',filename='boomerbible.png') }}" />
 </head>
 
 <body>
@@ -30,7 +35,11 @@
     <!--  put those here  <a></a>  -->
       <section id="sharables">
         <a href="https://drive.google.com/drive/folders/1m7IbTVUjmt85BgdvZQ10f1tbSqvEPxKU?usp=sharing" target="_blank">Share This</a>
-        <a href="" target="_blank">Tweet</a>
+
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" 
+        data-text="The meddling kids @genzforchange created the #BoomerBible to help educate your relatives, neighbors, or classmates about the negative policies and ideologies of certain conservative politicians 👇" 
+        data-url="https://www.boomerbible.org/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" 
+        charset="utf-8"></script>
       </section>
       </div>
         <div id="introduction">
@@ -72,11 +81,11 @@
         <h2>{{ obj.name }}</h2>
         {% for topic in obj.topics %}
         {% set curr_topic = topic.name.replace(" ", "-") .lower() %}
-        <div class="topic" id="{{ curr_person + '_' + curr_topic }}">
+        <div class="topic" id="{{ curr_topic }}">
             <h3>{{ topic.name }}</h3>
             {% for event in topic.events %}
             {% set curr_event = "event" + loop.index|string %}
-            <div class="event" id="{{ curr_person + '_' + curr_topic + '_' + curr_event }}">
+            <div class="event" id="{{ curr_event }}">
                 <span>{{ loop.index }}</span>
                 <h4>{{ event.date }}</h4>
                 <div class="bullets">

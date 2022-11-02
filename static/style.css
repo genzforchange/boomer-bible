@@ -198,6 +198,12 @@ footer p{
   text-align: right;
 }
 
+#sharables a {
+  margin-bottom: 5px;
+}
+
+
+
 @media screen and (max-width: 920px) {
   body h2{
     font-size: 25px;
@@ -263,7 +269,6 @@ footer p{
     flex-direction: column;
     align-items: flex-end;
   }
-
   
 }
 
@@ -310,6 +315,8 @@ p a {
   .topic h3{
     font-size: 16px;
   }
-
+  #sharables{
+    align-items: center;
+  }
 
 }
