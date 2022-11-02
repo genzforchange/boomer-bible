@@ -9,8 +9,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     var bookid = window.getSelection().anchorNode.parentElement.parentElement.parentElement.parentElement.parentElement.getAttribute('id')
     book = bookid.replace("-", " ").replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())
     var chapter = Array.prototype.indexOf.call(parent.children, child)
-    var clipboardText = `${book} ${chapter}:${verse} of The Boomer Bible states, "${text}". Learn more here: https://boomerbible.org/#${bookid} & Don't let them win: https://genzforchange.org/vote`
-    console.log(clipboardText)
+    var clipboardText = `${book} ${chapter}:${verse} of The Boomer Bible states, "${text}". Learn more here: boomerbible.org/#${bookid} & Don't let them win: genzforchange.org/vote`    console.log(clipboardText)
     e.clipboardData.setData('text/plain', clipboardText);
     e.preventDefault();
   });
