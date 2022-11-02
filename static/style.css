@@ -33,7 +33,7 @@ padding-inline-start: 30px;
 body {
    padding: 1em;
   color: black;
-  background-image: url("background.jpg");
+  background-image: url("assets/background.jpg");
   background-color: #191994;
   background-size: 100%;
 }
@@ -54,6 +54,28 @@ header span{
   letter-spacing: 2px;
 }
 
+#heading{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#heading a{
+    color: white;
+  text-decoration: none;
+  border: .75px white solid;
+  border-radius: 2px;
+  padding: 5px 6px;
+  transition: .2s;
+  margin-bottom: 10px;
+  text-align: center;
+  }
+
+#heading a:hover{
+  background-color: white;
+  color: black;
+}
+
 body h2{
   font-family: forma-djr-display,sans-serif;
   font-weight: 400;
@@ -62,20 +84,35 @@ body h2{
   letter-spacing: 2px;
   max-width: 600px;
   line-height: 40px;
-  margin: 20vh auto 0;
 }
 
-#content{
+#introduction{
   display:flex;
   justify-content: center;
-  
+  flex-direction: row-reverse;
+  margin: 15vh auto 0;
+  align-items: center;
 }
+
+#back-to-top-mobile, #back-to-top-mobile img{
+  display: none;
+}
+
+#back-to-top-desktop{
+    display: block;
+    }
+
+  #back-to-top-desktop img{
+    display: block;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 40px;
+    
+  }
 
 nav{
   display:flex;
-  position: fixed;
-  top: 200px;
-  left: 20px;
   flex-direction: column;
   font-family: forma-djr-display,sans-serif;
   font-weight: 200;
@@ -99,6 +136,10 @@ nav a{
 
 nav a:hover{
   color: #95aae9;
+}
+
+select{
+  display: none;
 }
 
 .person{
@@ -159,32 +200,116 @@ footer p{
 
 @media screen and (max-width: 920px) {
   body h2{
-    font-size: 3vw;
+    font-size: 25px;
     line-height: initial;
   }
-/*   everything below here is sofia being chaotic bc we on a deadline */
-/*   but also whenever you can or want to u can edit and we can update on final repo */
-  nav {
-    padding-left: 7px;
-    position: static;
-    margin-bottom: 10vh;
+
+  #introduction{
+    margin-top: initial;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-direction: column;
+    min-height: 80vh;
+  }
+
+  nav{
+    display: none;
+  }
+
+  select{
+    display: block;
+    font-family: forma-djr-display,sans-serif;
+    font-weight: 500;
+    font-style: normal;
     font-size: 20px;
+    letter-spacing: 1px;
+    border: white 5px solid;
+    border-radius: 2px;
+    padding: 5px;
+    width: 50%;
+    text-align: center;
   }
-  nav a {
-    text-align: left;
-    
+
+  option{
+    font-family: forma-djr-display,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 1px;
   }
-  #about {
-    font-size: 4.5vw;
-    margin-top: 12vw;
-  }
+
   header {
-    height: 53vh;
+    margin-bottom: 20px;
+  }
+
+    #back-to-top-desktop, #back-to-top-desktop img{
+  display: none;
+}
+
+  #back-to-top-mobile{
+    display: block;
+    }
+
+  #back-to-top-mobile img{
+    display: block;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 25px;
     
   }
+
+  #sharables{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  
 }
 
 p a {
   color: white;
 }
 
+@media screen and (max-width: 480px) {
+
+  body{
+    padding: 0;
+    margin: 0;
+  }
+  header h1{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #heading{
+  flex-direction: column;
+  
+}
+
+
+  
+  header h2{
+    font-size: 18px;
+  }
+  
+  select{
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .person{
+    margin: inherited 0;
+  }
+  
+  .person h2{
+    font-size: 25px;
+  }
+
+  .topic h3{
+    font-size: 16px;
+  }
+
+
+}
