@@ -21,10 +21,6 @@
 
         gtag('config', 'G-R1HQ82R1G4');
       </script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-      <script src="{{url_for('static', filename='script.js')}}"></script>
-      {% block head %}{% endblock %}
 </head>
 
 <body>
@@ -67,6 +63,8 @@
     <p><a href="https://www.genzforchange.org/vote" target="_blank">Register to Vote</a></p>
     <p>© 2022 Gen-Z for Change</p>
   </footer>
+
+  <div class="bible">
     
     {% for obj in data %}
     {% set curr_person = obj.name.replace(" ", "-") .lower() %}
@@ -93,7 +91,11 @@
     </div>
     {% endfor %}
 
+  </div>
     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
 </body>
 
 </html>
