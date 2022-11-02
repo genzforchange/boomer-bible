@@ -2,14 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <title>Boomer Bible by Gen-Z for Change</title>
+      <link rel="stylesheet" href="https://use.typekit.net/koo3vke.css">
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+      <link rel="manifest" href="assets/site.webmanifest">
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1HQ82R1G4"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-R1HQ82R1G4');
+      </script>
 </head>
 
 <body>
 
-<h1>Boomer Bible <span>by Gen-Z for Change</span></h1>
+<header>
+  <h1>Boomer Bible <span>by Gen-Z for Change</span></h1>
+
+   <h2 id="about">
+    The Boomer Bible is a resource for progressive Gen-Z voters and soon-to-be voters who wish to educate less progressive relatives, neighbors, and classmates about the negative policies and ideologies of certain conservative politicians. As a comprehensive and updated list of politicians’ policies across major categories of issues, this resource is crucial for 2022 midterm election discussions.
+  </h2>
+<!--  Added a navigation, needs anchors to IDs -->
+    <footer>
+<!--     <p>Web Design by</p>  -->
+    <p><a href="genzforchange.org/vote" target="_blank">Register to Vote</a></p>
+    <p>© 2022 Gen-Z for Change</p>
+  </footer>
+</header>
 
 {% for obj in data %}
 {% set curr_person = obj.name.replace(" ", "-") .lower() %}
@@ -36,4 +64,8 @@
 </div>
 {% endfor %}
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
+</html>
