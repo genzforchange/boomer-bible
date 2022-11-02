@@ -24,7 +24,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }
 });
 
-
-
-
-
+$('#mobile-nav-select').change(function() {
+    var cTarget = $(this).val();
+    console.log("pls work")
+    window.location.hash = cTarget;
+});
