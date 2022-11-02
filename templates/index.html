@@ -28,25 +28,45 @@
 </head>
 
 <body>
-    <header>
-        <h1>Boomer Bible <span>by Gen-Z for Change</span></h1>
-      
-         <h2 id="about">
-          The Boomer Bible is a resource for progressive Gen-Z voters and soon-to-be voters who wish to educate less progressive relatives, neighbors, and classmates about the negative policies and ideologies of certain conservative politicians. As a comprehensive and updated list of politicians’ policies across major categories of issues, this resource is crucial for 2022 midterm election discussions.
-        </h2>
-      <!--  Added a navigation, needs anchors to IDs -->
-      <nav>
-        {% for name in name_list %}
-        {% set name_id = name.replace(" ", "-") .lower() %}
-        <a href="#{{ name_id }}">{{ name }}</a>
-        {% endfor %}
-      </nav>
-          <footer>
-      <!--     <p>Web Design by</p>  -->
-          <p><a href="https://www.genzforchange.org/vote" target="_blank">Register to Vote</a></p>
-          <p>© 2022 Gen-Z for Change</p>
-        </footer>
-      </header>
+  <header>
+    <div id="heading">
+      <h1 id="title">Boomer Bible <span>by Gen-Z for Change</span></h1>
+    <!--  put those here  <a></a>  -->
+      <section id="sharables">
+        <a href="https://drive.google.com/drive/folders/1m7IbTVUjmt85BgdvZQ10f1tbSqvEPxKU?usp=sharing" target="_blank">Share This</a>
+        <a href="" target="_blank">Tweet</a>
+      </section>
+      </div>
+        <div id="introduction">
+       <h2 id="about">
+        The Boomer Bible is a resource for progressive Gen-Z voters and soon-to-be voters who wish to educate less progressive relatives, neighbors, and classmates about the negative policies and ideologies of certain conservative politicians. As a comprehensive and updated list of politicians’ policies across major categories of issues, this resource is crucial for 2022 midterm election discussions.
+      </h2>
+    <!--  Added a navigation, needs anchors to IDs -->
+    <nav>
+      {% for name in name_list %}
+      {% set name_id = name.replace(" ", "-") .lower() %}
+      <a href="#{{ name_id }}">{{ name }}</a>
+      {% endfor %}
+    </nav>
+
+    <select id="mobile-nav-select" name="mobile-nav-select">
+      <option value="start" selected disabled>Start Here</option>
+      {% for name in name_list %}
+      {% set name_id = name.replace(" ", "-") .lower() %}
+      <option value="{{ name_id }}">{{ name }}</option>
+      {% endfor %}
+    </select>
+
+  </header>
+
+  <a href="#title" id="back-to-top-mobile"><img src="{{ url_for('static',filename='up-black.png') }}"></a>
+  <a href="#title" id="back-to-top-desktop"><img src="{{ url_for('static',filename='up-white.png') }}"></a>
+
+  <footer>
+  <!--     <p>Web Design by</p>  -->
+    <p><a href="https://www.genzforchange.org/vote" target="_blank">Register to Vote</a></p>
+    <p>© 2022 Gen-Z for Change</p>
+  </footer>
     
     {% for obj in data %}
     {% set curr_person = obj.name.replace(" ", "-") .lower() %}
